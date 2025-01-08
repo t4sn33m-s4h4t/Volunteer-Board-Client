@@ -43,5 +43,37 @@ You can access the live application at: [Volunteer Board](https://tasneem-volunt
 - **react-social-login-buttons**: For social login buttons.
 - **react-spinners**: For loading spinners.
 - **react-toastify**: For toast notifications.
+## Installation
 
+To get started with the project, follow these steps:
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone <repository-url>
+   cd <project-directory>
+   ```
+2. **Install dependencies:**
+Use npm or yarn to install the required dependencies.
+ ```bash
+npm install
+```
+3. **Set up environment variables:**
+Create a .env.local file in the root of the project if it doesn't exist already. Then, add the following variables:
+```bash
+VITE_API_KEY=<your-api-key>
+VITE_AUTH_DOMAIN=<your-auth-domain>
+VITE_PROJECT_ID=<your-project-id>
+VITE_STORAGE_BUCKET=<your-storage-bucket>
+VITE_MESSAGING_SENDER_ID=<your-sender-id>
+VITE_APP_ID=<your-app-id>
+VITE_BACKEND_URL=<your-backend-url>
+```
+4. **Start the development server:**
+Run the following command to start the Vite development server:
+```bash
+npm run dev
+or
+yarn dev
+```
 ### Feel free to contact me.
