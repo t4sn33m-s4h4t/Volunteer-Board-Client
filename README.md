@@ -10,6 +10,12 @@ The purpose of this project is to provide a platform where users can create volu
 
 You can access the live application at: [Volunteer Board](https://tasneem-volunteer-board.web.app)
 
+## Main Technologies
+
+- **React**
+- **Firebase**
+- **Tan-Stack-Quary**
+
 ## Key Features
 
 - **User Authentication**: Users can register, log in, and log out using email/password, Google, or GitHub.
