@@ -55,7 +55,7 @@ To get started with the project, follow these steps:
    ```
 2. **Install dependencies:**
 Use npm or yarn to install the required dependencies.
- ```bash
+```bash
 npm install
 ```
 3. **Set up environment variables:**
