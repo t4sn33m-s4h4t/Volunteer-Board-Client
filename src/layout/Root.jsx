@@ -5,8 +5,12 @@ import FooterComponent from './Footer';
 
 import HelmetComponent from '../pages/ShareComponents/HelmetComponent';
 import { ToastContainer } from "react-toastify";
+import { useEffect } from "react";
 
 const Root = () => {
+    useEffect(() => {
+        document.documentElement.setAttribute('class', `${window.matchMedia("(prefers-color-scheme: dark)").matches && "dark"}`);  
+      }, []);
     return (
         <div >
             <HelmetComponent />
