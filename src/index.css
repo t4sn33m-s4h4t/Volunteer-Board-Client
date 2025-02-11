@@ -16,5 +16,8 @@
 .awssld__content{
     height: 85vh;
 }
-
+#flowbiteCard > div{
+    padding: 1rem!important;
+    gap: 0.1rem!important;
+}
 

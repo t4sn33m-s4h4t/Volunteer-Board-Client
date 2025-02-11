@@ -57,7 +57,7 @@ const faqData = [
 
 export default function FAQs() {
   return (
-    <div className="bg-white mt-10 p-10 rounded-lg shadow-lg dark:bg-gray-800">
+    <div className="bg-white mt-10 p-10 rounded-lg shadow-lg dark:bg-gray-900">
       <motion.h2
         variants={fadeIn("right", 0.2)}
         initial="hidden"

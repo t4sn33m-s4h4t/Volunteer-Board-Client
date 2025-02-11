@@ -13,6 +13,7 @@ export default function CardComponent({ data }) {
       viewport={{ once: true, amount: 0.7 }}
     >
       <Card
+      id="flowbiteCard"
         className="max-w-sm mx-auto h-full w-full relative shadow-lg dark:bg-cyan-900"
         imgAlt={data.thumbnail}
         imgSrc={data.thumbnail}
@@ -24,6 +25,9 @@ export default function CardComponent({ data }) {
         <Badge className="absolute top-1 left-1 rounded-none px-5 py-2 shadow-md" color="indigo">{data.location}</Badge>
         <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
           {data.postTitle}
+        </h5>
+        <h5 className="tracking-tight text-gray-600 dark:text-gray-200">
+          {data.description.substring(0, 100)}...
         </h5>
         <Link to={`/post-details/${data._id}`} className="mt-4 w-full text-center py-2 px-4 bg-sky-950 text-white font-medium rounded-lg shadow-md hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-opacity-50">
           View Details

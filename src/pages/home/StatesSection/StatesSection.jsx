@@ -39,7 +39,7 @@ const StatsSection = () => {
 
 
   return (
-    <section className="bg-white mt-10 p-10 rounded-lg shadow-lg dark:bg-gray-900">
+    <section className="bg-white mt-10 p-10 rounded-lg shadow-lg  dark:bg-gray-900">
       <div className="max-w-5xl mx-auto text-center">
         <motion.h2
           variants={fadeIn("left", 0.2)}
