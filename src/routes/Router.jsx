@@ -15,6 +15,7 @@ import PrivateRoute from "./PrivateRoute.jsx"
 import PostDetails from "../pages/PostDetails/PostDetails.jsx";
 import NotFound from "../pages/404/NotFound.jsx";
 import AboutUs from "../pages/AboutUs.jsx";
+import Contact from "../pages/contact.jsx";
 
 const router = createBrowserRouter([
   {
@@ -71,7 +72,11 @@ const router = createBrowserRouter([
       {
         path: "about-us",
         element: <AboutUs />
-      }
+      },
+      {
+        path: "contact-us",
+        element: <Contact />
+      },
     ]
   },
 ]);

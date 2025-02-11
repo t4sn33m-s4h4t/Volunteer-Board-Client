@@ -27,6 +27,10 @@ export default function NavbarComponent() {
       path: "/"
     },
     {
+      name: "About Us",
+      path: "/about-us"
+    },
+    {
       name: "All Volunteer Need Posts",
       path: "/all-posts"
     },
@@ -45,7 +49,11 @@ export default function NavbarComponent() {
           path: "/manage-posts",
         },
       ]
-    }
+    },
+    {
+      name: "Contact",
+      path: "/contact-us"
+    },
   ]
   const DropdownNavLink = ({ subMenu }) => (
     <DropdownItem key={subMenu.path}>
