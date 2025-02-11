@@ -5,12 +5,12 @@ import { fadeIn } from '../../variant';
 export default function Banner({ ban, title, description }) {
     return (
         <div
-            className="hero min-h-screen bg-cover bg-center bg-no-repeat "
+            className="hero h-full bg-cover bg-center bg-no-repeat "
             style={{
                 backgroundImage: `url(${ban})`,
             }}>
 
-            <div className="hero-content h-[90vh] text-neutral-content text-center ">
+            <div className="hero-content h-full text-neutral-content text-center ">
                 <div className="max-w-lg h-full mx-auto pt-24 px-5">
                     <motion.h1
                         variants={fadeIn("left", 0.2)}

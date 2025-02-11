@@ -11,15 +11,15 @@ import {
 import HoverDropdown from "./HoverDropdown";
 import { Link, NavLink, } from "react-router-dom";
 import { FaAngleDown } from "react-icons/fa";
-import { useAuth } from "../CustomHooks/useAuth"; 
+import { useAuth } from "../CustomHooks/useAuth";
 import { useEffect, useState } from "react";
 
 export default function NavbarComponent() {
-  const {user, signOutUser, setUser } = useAuth();
+  const { user, signOutUser, setUser } = useAuth();
   const [imgSrc, setImgSrc] = useState(user?.photoURL);
-  useEffect(()=>{
+  useEffect(() => {
     setImgSrc(user?.photoURL)
-  },[user])
+  }, [user])
 
   const menus = [
     {
@@ -62,24 +62,36 @@ export default function NavbarComponent() {
     </DropdownItem>
   );
 
+  const [scrollActive, setScrollActive] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollActive(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
-    <Navbar fluid>
+    <Navbar
+      fluid
+      id="navbar-container"
+      className={`fixed top-0 w-full z-30 bg-white transition-all ${scrollActive ? "shadow-md py-2 bg-gray-800" : "py-6"
+        }`}>
       <NavbarBrand >
-        <Link to="/" className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Volunteer Board</Link>
+        <Link to="/" className={`self-center whitespace-nowrap text-xl font-semibold dark:text-white  ${scrollActive && "text-white"}`}>Volunteer Board</Link>
       </NavbarBrand>
       <div className="flex md:order-2">
         {
           user?.email
-          ?
-          <HoverDropdown imgSrc={imgSrc} setImgSrc={setImgSrc}  signOutUser={signOutUser} setUser={setUser}  /> 
-          :
-          <Link to={`/login`} className="w-full text-center py-2 px-4 bg-sky-800 text-white font-medium rounded-lg shadow-md hover:bg-sky-950 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-opacity-50">
-          Login
-        </Link>
+            ?
+            <HoverDropdown imgSrc={imgSrc} setImgSrc={setImgSrc} signOutUser={signOutUser} setUser={setUser} />
+            :
+            <Link to={`/login`} className="w-full text-center py-2 px-4 bg-sky-800 text-white font-medium rounded-lg shadow-md hover:bg-sky-950 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-opacity-50">
+              Login
+            </Link>
         }
-     
-      <div>     
-    </div>
+
+        <div>
+        </div>
         <DarkThemeToggle className="mx-3" />
         <NavbarToggle />
       </div>
@@ -87,7 +99,7 @@ export default function NavbarComponent() {
         {
           menus.map((menu => {
             if (menu.secure && !user?.email) {
-              return null;    
+              return null;
             }
             return menu.dropdown ? (
               <Dropdown
@@ -116,8 +128,8 @@ export default function NavbarComponent() {
                 to={menu.path}
                 className={({ isActive }) =>
                   isActive
-                    ? 'text-blue-600 font-bold dark:text-blue-400'
-                    : 'text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400'
+                    ? ` font-bold dark:text-blue-400 ${scrollActive ? "text-blue-400" : "text-blue-600"}`
+                    : `dark:text-gray-400 dark:hover:text-blue-400 ${scrollActive ? "text-gray-400 hover:text-blue-400" : "text-gray-600 hover:text-blue-600"}`
                 }
               >
                 {menu.name}

@@ -32,13 +32,13 @@ export default function Slider() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
-    }, 5000);
+    }, 50000);
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="mb-20">
-      <AwesomeSlider className="h-[calc(100vh-110px)]" selected={currentIndex}>
+      <AwesomeSlider className="max-h-[35rem] h-[35rem]" selected={currentIndex}>
         {slides.map((slide, index) => (
           <div key={index} className="w-full h-full">
             <Banner ban={slide.banner} title={slide.title} description={slide.description} />

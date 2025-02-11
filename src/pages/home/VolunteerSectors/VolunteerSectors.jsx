@@ -55,7 +55,7 @@ const VolunteerSectors = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto py-10 ">
+    <div className="  mx-auto py-10 ">
       <motion.h2
         variants={fadeIn("down", 0.2)}
         initial="hidden"

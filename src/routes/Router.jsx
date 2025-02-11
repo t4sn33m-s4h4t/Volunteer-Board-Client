@@ -14,6 +14,7 @@ import SecureRoutes from "./SecureRoutes";
 import PrivateRoute from "./PrivateRoute.jsx"
 import PostDetails from "../pages/PostDetails/PostDetails.jsx";
 import NotFound from "../pages/404/NotFound.jsx";
+import AboutUs from "../pages/AboutUs.jsx";
 
 const router = createBrowserRouter([
   {
@@ -66,6 +67,10 @@ const router = createBrowserRouter([
         element: <PrivateRoute>
           <PostDetails />
         </PrivateRoute>
+      },
+      {
+        path: "about-us",
+        element: <AboutUs />
       }
     ]
   },

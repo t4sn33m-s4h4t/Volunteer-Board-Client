@@ -124,7 +124,7 @@ const AllVolunteerNeedPosts = () => {
                         </div>)
                     :
                     <div
-                        className={` ${CardView ? "grid" : "block"} grid-cols-1 text-left gap-10 md:grid-cols-2 lg:grid-cols-3 mb-10`}>
+                        className={` ${CardView ? "grid" : "block"} grid-cols-1 text-left gap-10 md:grid-cols-2 lg:grid-cols-4 mb-10`}>
                         {
                             CardView ? (data?.map((post) => (
                                 <CardComponent key={post.id} data={post} />

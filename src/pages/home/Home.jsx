@@ -6,9 +6,9 @@ import VolunteerSectors from './VolunteerSectors/VolunteerSectors'
 import { HR } from "flowbite-react";
 const Home = () => {
   return (
-    <div className='bg-gray-200 dark:bg-sky-950 pb-10'>
+    <div className='bg-gray-200 dark:bg-sky-950 pb-10 '>
       <Slider />
-      <div className='md:px-20 px-5'>
+      <div className='md:px-32 px-5'>
       <VolunteerNeedsNow />
       <HR className='bg-slate-400 dark:bg-gray-200' />
       <VolunteerSectors />

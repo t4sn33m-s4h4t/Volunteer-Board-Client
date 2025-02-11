@@ -10,11 +10,11 @@ const Root = () => {
     return (
         <div >
             <HelmetComponent />
-            <div className='max-w-7xl mx-auto'>
+            <div className=' mx-auto'>
                 <Flowbite>
                 <ToastContainer position="top-center" autoClose={2400}/>
                     <NavbarComponent />
-                    <div className='min-h-[calc(100vh-90px)]'>
+                    <div className='min-h-[calc(100vh-90px)] mt-20 '>
                         <Outlet />
                     </div>
                     
