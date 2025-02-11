@@ -115,7 +115,7 @@ export default function NavbarComponent() {
                 inline
                 key={menu.path}
                 label={
-                  <span className="text-gray-600 flex justify-center items-center hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400">
+                  <span className={`  flex justify-center items-center  dark:text-gray-400 dark:hover:text-blue-400 ${!scrollActive ? "text-gray-600 hover:text-blue-600" : " text-gray-400 hover:text-blue-400 "}`}>
                     {menu.name}
                     <FaAngleDown />
                   </span>
