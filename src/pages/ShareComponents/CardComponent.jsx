@@ -2,15 +2,16 @@
 import { format } from "date-fns";
 import { Badge, Card } from "flowbite-react";
 import { Link } from "react-router-dom";
-import { motion } from "motion/react";
+
 import { fadeIn } from "../variant"
 export default function CardComponent({ data }) {
+  
   return (
-    <motion.div
+    <div
       variants={fadeIn("left", 0.2)}
-      initial="hidden"
-      whileInView={"show"}
-      viewport={{ once: true, amount: 0.7 }}
+      
+      
+      
     >
       <Card
       id="flowbiteCard"
@@ -33,6 +34,6 @@ export default function CardComponent({ data }) {
           View Details
         </Link>
       </Card>
-    </motion.div>
+    </div>
   );
 }

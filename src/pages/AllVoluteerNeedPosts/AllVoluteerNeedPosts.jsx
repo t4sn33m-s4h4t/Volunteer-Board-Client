@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import CardComponent from '../ShareComponents/CardComponent';
 import { FaRegListAlt, FaSearch } from 'react-icons/fa';
 import { MdOutlineApps } from "react-icons/md"
@@ -7,10 +7,11 @@ import { useQuery } from '@tanstack/react-query';
 import useAxios from '../../CustomHooks/useAxios';
 import ListComponent from '../ShareComponents/ListComponent';
 import { Label, Pagination, Select } from 'flowbite-react';
-import { motion } from "motion/react";
+
 import { fadeIn } from "../variant"
 
 const AllVolunteerNeedPosts = () => {
+    const [sortOption, setSortOption] = useState("date-ascending");
     const ownAxios = useAxios()
     const [itemsPerPage, setItemsPerPage] = useState(() => {
         const storedName = localStorage.getItem('itemsPerPage');
@@ -29,6 +30,8 @@ const AllVolunteerNeedPosts = () => {
         }
     }, [itemsPerPage]);
 
+
+
     const totalPages = Math.ceil((resut?.data?.totalPosts || 1) / itemsPerPage);
     const onPageChange = (page) => setCurrentPage(page);
     const [CardView, setCardView] = useState(true)
@@ -37,7 +40,8 @@ const AllVolunteerNeedPosts = () => {
 
     const [searchTerm, setSearchTerm] = useState('');
     const OwnAxios = useAxios();
-    const { isLoading, error, data } = useQuery({
+
+    const { isLoading, error, data = [] } = useQuery({
         queryKey: ['AllVolunteerNeedPosts', searchTerm, currentPage, itemsPerPage],
         queryFn: async () =>
             await OwnAxios.get('/volunteer-need-posts', {
@@ -49,10 +53,22 @@ const AllVolunteerNeedPosts = () => {
             }).then((res) => res.data),
         staleTime: 5000,
     });
+
+    const sortedData = useMemo(() => {
+        if (!data) return [];
+        const dataCopy = [...data];
+        if (sortOption === 'date-ascending') {
+            dataCopy.sort((a, b) => new Date(b.deadline) - new Date(a.deadline));
+        } else if (sortOption === 'date-descending') {
+            dataCopy.sort((a, b) => new Date(a.deadline) - new Date(b.deadline));
+        }
+        return dataCopy;
+    }, [data, sortOption]);
+
     const handleSearchChange = (e) => {
         setSearchTerm(e.target.value);
     };
-     
+
     if (error) {
         return (
             <div className="text-center">
@@ -60,22 +76,25 @@ const AllVolunteerNeedPosts = () => {
             </div>
         );
     }
+
+
+
     return (
         <div className="w-full text-center pb-10 md:px-20 px-5 bg-gray-200 dark:bg-sky-950 py-10">
-            <motion.h2
-                variants={fadeIn("up", 0.2)}
-                initial="hidden"
-                whileInView={"show"}
-                viewport={{ once: true, amount: 0.7 }}
+            <h2
+                
+                
+                
+                
                 className="text-3xl font-semibold text-center mb-8 dark:text-white">
                 All volunteer Need posts
-            </motion.h2>
+            </h2>
 
-            <motion.div
+            <div
                 variants={fadeIn("right", 0.3)}
-                initial="hidden"
-                whileInView={"show"}
-                viewport={{ once: true, amount: 0.7 }}
+                
+                
+                
                 className="mb-4 relative flex items-center justify-center w-full md:w-3/5 mx-auto border border-gray-300 rounded-lg overflow-hidden shadow-lg">
                 <input
                     type="text"
@@ -85,35 +104,52 @@ const AllVolunteerNeedPosts = () => {
                     className="w-full p-3 pl-5 pr-12 dark:text-black border-none rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 dark:bg-gray-100 dark:border-gray-600 transition-all"
                 />
                 <FaSearch className="absolute right-3 text-sky-500 w-5 h-5 cursor-pointer" />
-            </motion.div>
-            <motion.div
-                variants={fadeIn("up", 0.2)}
-                initial="hidden"
-                whileInView={"show"}
-                viewport={{ once: true, amount: 0.7 }}
-                className='mb-8 mx-auto w-full flex justify-between items-end'>
+            </div>
+            <div
+                
+                
+                
+                
+                className='mb-8 mx-auto w-full flex justify-between md:flex-row flex-col items-center gap-5 items-end'>
 
                 <div className="w-fit">
                     {!searchTerm.length &&
-                        <><div className="mb-2 block">
-                        <Label htmlFor="itemsPerPage" value="Posts Per Page" />
-                    </div>
-                    <Select id="itemsPerPage" value={itemsPerPage} onChange={(e) => setItemsPerPage(e.target.value)} required>
-                        <option>3</option>
-                        <option>6</option>
-                        <option>9</option>
-                        <option>12</option>
-                        <option>15</option>
-                        <option>18</option>
-                    </Select>
-                    </>}
+                        <>
+                            <div className="mb-2 block">
+                                <Label htmlFor="itemsPerPage" value="Posts Per Page" />
+                            </div>
+                            <Select id="itemsPerPage" value={itemsPerPage} onChange={(e) => setItemsPerPage(e.target.value)} required>
+                                <option className=''>3</option>
+                                <option>6</option>
+                                <option>9</option>
+                                <option>12</option>
+                                <option>15</option>
+                                <option>18</option>
+                            </Select>
+                        </>}
                 </div>
+                <div className={`w-1/2 `}>
+                    <div className="mb-2 block">
+                        <Label htmlFor="itemsPerPage" value="Sort This Page" />
+                    </div>
+                    <select
+                        id="sort"
+                        value={sortOption}
+                        onChange={(e) => {
+                            setSortOption(e.target.value)
+                        }}
+                        className="w-full px-3 py-2 border border-teal-300 rounded-md focus:outline-none"
+                    > 
+                        <option value="date-ascending">Date (Ascending)</option>
+                        <option value="date-descending">Date (Descending)</option>
 
+                    </select>
+                </div>
                 <div className='flex justify-around text-2xl w-fit  bg-white rounded-md dark:bg-cyan-800 dark:text-gray-200'>
                     <MdOutlineApps name='card' className={`cursor-pointer py-2 px-3 box-content ${CardView && activeClass}`} onClick={() => { setCardView(true) }} />
                     <FaRegListAlt name='list' className={`cursor-pointer py-2 px-3 box-content ${!CardView && activeClass}`} onClick={() => { setCardView(false) }} />
                 </div>
-            </motion.div>
+            </div>
             {
                 isLoading || !data || data.length === 0 ?
                     (isLoading ?
@@ -126,27 +162,27 @@ const AllVolunteerNeedPosts = () => {
                     <div
                         className={` ${CardView ? "grid" : "block"} grid-cols-1 text-left gap-10 md:grid-cols-3 lg:grid-cols-4 mb-10`}>
                         {
-                            CardView ? (data?.map((post) => (
+                            CardView ? (sortedData?.map((post) => (
                                 <CardComponent key={post.id} data={post} />
                             )))
 
-                                : <ListComponent data={data} />
+                                : <ListComponent data={sortedData} />
 
                         }
                     </div>
             }
             {
-                !searchTerm.length && <motion.div
-                variants={fadeIn("up", 0.3)}
-                initial="hidden"
-                whileInView={"show"}
-                viewport={{ once: true, amount: 0.7 }}
-                className="flex overflow-x-auto ">
+                !searchTerm.length && <div
+                    variants={fadeIn("up", 0.3)}
+                    
+                    
+                    
+                    className="flex overflow-x-auto ">
 
-                <Pagination  className='justify-center mx-auto' currentPage={currentPage} totalPages={totalPages} onPageChange={onPageChange} showIcons />
-            </motion.div>
+                    <Pagination className='justify-center mx-auto' currentPage={currentPage} totalPages={totalPages} onPageChange={onPageChange} showIcons />
+                </div>
             }
-            
+
         </div>
     );
 };

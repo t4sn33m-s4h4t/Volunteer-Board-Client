@@ -8,7 +8,7 @@ import { HR } from "flowbite-react";
 import Reviews from "./Reviews/Reviews"
 const Home = () => {
   return (
-    <div className='bg-gray-200 dark:bg-sky-950 pb-10 '>
+    <div className='bg-gray-200 dark:bg-sky-950 '>
       <Slider />
       <div className='md:px-32 px-5'>
       <VolunteerNeedsNow />

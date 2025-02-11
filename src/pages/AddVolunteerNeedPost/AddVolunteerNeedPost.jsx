@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import { useAuth } from "../../CustomHooks/useAuth";
 import { useMutation } from '@tanstack/react-query'
 import useAxiosSecure from "../../CustomHooks/useAxiosSecure";
-import { motion } from "motion/react";
+
 import { fadeIn } from "../variant"
 import { useNavigate } from "react-router-dom";
 const AddVolunteerNeedPost = () => {
@@ -95,18 +95,18 @@ const AddVolunteerNeedPost = () => {
   return (
     <div className="bg-gray-200 dark:bg-sky-950 py-10">
       <div className="max-w-4xl my-10 mx-auto p-8 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
-        <motion.h2
-                variants={fadeIn("up", 0.2)}
-                initial="hidden"
-                whileInView={"show"}
-                viewport={{ once: true, amount: 0.7 }}
+        <h2
+                
+                
+                
+                
         className="text-3xl font-semibold text-center mt-8 mb-5 dark:text-white">
           Add Volunteer Need Post
-        </motion.h2>
-        <motion.form
+        </h2>
+        <form
                 variants={fadeIn("down", 0.4)}
-                initial="hidden"
-                whileInView={"show"}
+                
+                
                 viewport={{ once: true, amount: 0.2 }}
         onSubmit={handleSubmit} className="space-y-6">
           <div>
@@ -240,7 +240,7 @@ const AddVolunteerNeedPost = () => {
               Add Post
             </Button>
           </div>
-        </motion.form>
+        </form>
       </div>
     </div>
   );

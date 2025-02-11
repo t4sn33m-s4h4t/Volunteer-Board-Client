@@ -31,7 +31,7 @@ export default function NavbarComponent() {
       path: "/about-us"
     },
     {
-      name: "All Volunteer Need Posts",
+      name: "Volunteer Need Posts",
       path: "/all-posts"
     },
     {
@@ -103,7 +103,7 @@ export default function NavbarComponent() {
         <DarkThemeToggle className="mx-3" />
         <NavbarToggle />
       </div>
-      <NavbarCollapse>
+      <NavbarCollapse className="md:block">
         {
           menus.map((menu => {
             if (menu.secure && !user?.email) {

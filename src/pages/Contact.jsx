@@ -1,19 +1,13 @@
 import contactVector from "../assets/contactVector.svg";
-import { fadeIn } from "./variant";
-import { motion } from "motion/react";
 const Contact = () => {
   return (
     <div className="md:px-32 px-5 bg-gray-200 dark:bg-sky-950 min-h-screen flex items-center justify-center">
       
       <div className=" w-full mx-auto p-8 bg-white dark:bg-gray-800 rounded-lg shadow-lg ">
-      <motion.h2
-                variants={fadeIn("up", 0.2)}
-                initial="hidden"
-                whileInView={"show"}
-                viewport={{ once: true, amount: 0.7 }}
+      <h2
         className="text-3xl font-semibold text-center mt-8 mb-5 dark:text-white">
           Contact Us
-        </motion.h2>
+        </h2>
 <div className="flex flex-col md:flex-row items-center">
         <div className="w-full md:w-1/2 flex justify-center">
           <img src={contactVector} alt="Contact Us" className="w-3/4 md:w-2/3" />

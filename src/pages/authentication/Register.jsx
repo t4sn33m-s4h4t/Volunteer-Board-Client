@@ -8,7 +8,7 @@ import { IoEye } from "react-icons/io5";
 import { RiProfileLine } from "react-icons/ri";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { CiImageOn } from "react-icons/ci";
-import { motion } from "motion/react";
+
 import { fadeIn } from "../variant"
 
 export default function Register() {
@@ -79,19 +79,19 @@ export default function Register() {
     return (
         <div className="bg-gray-100 dark:bg-sky-950 pb-10">
             <div className="flex max-w-md flex-col gap-4 mx-auto min-h-[calc(100vh-90px)] ">
-                <motion.h2
-                    variants={fadeIn("up", 0.2)}
-                    initial="hidden"
-                    whileInView={"show"}
-                    viewport={{ once: true, amount: 0.7 }}
+                <h2
+                    
+                    
+                    
+                    
                     className="text-3xl font-semibold text-center mt-8 dark:text-white">
                     Register Now
-                </motion.h2>
-                <motion.form
+                </h2>
+                <form
                     variants={fadeIn("right", 0.3)}
-                    initial="hidden"
-                    whileInView={"show"}
-                    viewport={{ once: true, amount: 0.7 }}
+                    
+                    
+                    
                     onSubmit={handleSubmit}>
                     <div className="mt-4">
                         <div className="mb-2 block">
@@ -196,7 +196,7 @@ export default function Register() {
                         <GoogleLoginButton onClick={handleGoogleSingIn} />
                         <GithubLoginButton onClick={handleGitHubSignIn} />
                     </div>
-                </motion.form>
+                </form>
             </div>
         </div>
     );

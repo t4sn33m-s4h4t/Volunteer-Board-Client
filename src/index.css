@@ -2,16 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+#navbar-container{
+    padding-left: 0;
+    padding-right: 0;
+}
 #navbar-container > .flex {
     padding-left: 0.75rem;
     padding-right: 0.75rem;
   }
-@media (min-width: 768px) {  
+  /* @media (min-width: 768px) {  
     #navbar-container > .flex {
-      padding-left: 7rem;
-      padding-right: 7rem;
+      padding-left: 0;
+      padding-right: 0;
     }
-  }
+  } */
+  @media (min-width: 1024px) {
+    #navbar-container > .flex {
+        padding-left: 7rem ;
+        padding-right: 7rem ;
+    }
+}
   
 .awssld__content{
     height: 85vh;

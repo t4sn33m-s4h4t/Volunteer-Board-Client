@@ -8,7 +8,7 @@ import { useMutation, useQuery } from '@tanstack/react-query'
 import useAxiosSecure from "../../CustomHooks/useAxiosSecure";
 import { useParams } from "react-router-dom";
 import Loading from "../Loading";
-import { motion } from "motion/react";
+
 import { fadeIn } from "../variant"
 
 const UpdateVolunteerNeedPost = () => {
@@ -104,18 +104,18 @@ const UpdateVolunteerNeedPost = () => {
   return (
     <div className="bg-gray-200 dark:bg-sky-950 py-10">
       <div className="max-w-4xl my-10 mx-auto p-8 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
-        <motion.h2
-          variants={fadeIn("up", 0.2)}
-          initial="hidden"
-          whileInView={"show"}
-          viewport={{ once: true, amount: 0.7 }}
+        <h2
+          
+          
+          
+          
           className="text-3xl font-semibold text-center mt-8 mb-5 dark:text-white">
           Update Volunteer Need Post
-        </motion.h2>
-        <motion.form
+        </h2>
+        <form
           variants={fadeIn("down", 0.4)}
-          initial="hidden"
-          whileInView={"show"}
+          
+          
           viewport={{ once: true, amount: 0.2 }}
           onSubmit={handleSubmit} className="space-y-6">
           <div>
@@ -249,7 +249,7 @@ const UpdateVolunteerNeedPost = () => {
               Update Post
             </Button>
           </div>
-        </motion.form>
+        </form>
       </div>
     </div>
   );

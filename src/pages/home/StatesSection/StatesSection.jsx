@@ -1,8 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxios from "../../../CustomHooks/useAxios";
 import { useEffect, useState } from "react";
-import { motion } from "motion/react";
-import { fadeIn } from "../../variant"
 const StatsSection = () => {
   const ownAxios = useAxios();
   const infos = [
@@ -39,31 +37,19 @@ const StatsSection = () => {
 
 
   return (
-    <section className="bg-white mt-10 p-10 rounded-lg shadow-lg  dark:bg-gray-900">
+    <section className="bg-white mb-10 mx-auto py-10 px-5 rounded-lg shadow-lg  dark:bg-gray-900">
       <div className="max-w-5xl mx-auto text-center">
-        <motion.h2
-          variants={fadeIn("left", 0.2)}
-          initial="hidden"
-          whileInView={"show"}
-          viewport={{ once: true, amount: 0.7 }}
+        <h2
           className="text-3xl font-semibold text-center mb-8 dark:text-white">
           Volunteer Board Stats
-        </motion.h2>
-        <motion.p
-          variants={fadeIn("right", 0.2)}
-          initial="hidden"
-          whileInView={"show"}
-          viewport={{ once: true, amount: 0.7 }}
+        </h2>
+        <p
           className="mt-2 text-gray-600 dark:text-gray-400">
           Here we list our site stats and how many people we've helped find
           volunteer opportunities and how many volunteers have joined the cause.
           It's a pretty awesome stats area!
-        </motion.p>
-        <motion.div
-          variants={fadeIn("up", 0.2)}
-          initial="hidden"
-          whileInView={"show"}
-          viewport={{ once: true, amount: 0.7 }}
+        </p>
+        <div
           className="grid grid-cols-2 md:grid-cols-3 gap-8 mt-8 justify-center">
           {infos.map(({ id, value, description }) => (
             <div key={id} className="flex flex-col items-center col-span-2 md:col-span-1">
@@ -73,7 +59,7 @@ const StatsSection = () => {
               <span className="text-gray-600 dark:text-gray-400">{description}</span>
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

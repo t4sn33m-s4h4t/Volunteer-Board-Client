@@ -1,5 +1,5 @@
 import { Accordion, AccordionContent, AccordionPanel, AccordionTitle } from "flowbite-react";
-import { motion } from "motion/react";
+
 import { fadeIn } from "../../variant"
 
 const faqData = [
@@ -57,20 +57,20 @@ const faqData = [
 
 export default function FAQs() {
   return (
-    <div className="bg-white mt-10 p-10 rounded-lg shadow-lg dark:bg-gray-900">
-      <motion.h2
+    <div className="bg-white mb-10 mx-auto py-10 px-10 rounded-lg shadow-lg dark:bg-gray-900">
+      <h2
         variants={fadeIn("right", 0.2)}
-        initial="hidden"
-        whileInView={"show"}
-        viewport={{ once: true, amount: 0.7 }}
+        
+        
+        
         className="text-3xl font-semibold text-center mb-8 dark:text-white">
         FAQs
-      </motion.h2>
-      <motion.div
+      </h2>
+      <div
         variants={fadeIn("left", 0.2)}
-        initial="hidden"
-        whileInView={"show"}
-        viewport={{ once: true, amount: 0.7 }}
+        
+        
+        
 >
         <Accordion collapseAll>
         {faqData.map((faq, index) => (
@@ -80,7 +80,7 @@ export default function FAQs() {
           </AccordionPanel>
         ))}
       </Accordion>
-    </motion.div>
+    </div>
     </div >
   );
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import { FaHandsHelping, FaRegEdit, FaTrashAlt, FaPlusSquare, FaUsers, FaTasks, FaUserPlus, FaHeart } from "react-icons/fa";
-import { motion } from "motion/react";
+
 import { fadeIn } from "../../variant"
 const VolunteerSectors = () => {
   const categories = [
@@ -55,23 +55,23 @@ const VolunteerSectors = () => {
   ];
 
   return (
-    <div className="  mx-auto py-10 ">
-      <motion.h2
-        variants={fadeIn("down", 0.2)}
-        initial="hidden"
-        whileInView={"show"}
-        viewport={{ once: true, amount: 0.7 }}
+    <div className="mb-10 mx-auto py-10 ">
+      <h2
+        
+        
+        
+        
         className="text-3xl font-semibold text-center mb-8 dark:text-white">
         Volunteer Board Sectors
-      </motion.h2>
+      </h2>
 
       <div
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {categories.map(({ id, title, description, icon }) => (
-          <motion.div
+          <div
           variants={fadeIn("right", 0.2)}
-          initial="hidden"
-          whileInView={"show"}
+          
+          
           viewport={{ once: true, amount: 0.4 }}
             key={id}
             className="flex flex-col items-center p-6 bg-white dark:bg-cyan-800 rounded-lg shadow hover:shadow-lg transition"
@@ -81,7 +81,7 @@ const VolunteerSectors = () => {
             </div>
             <h3 className="text-lg font-medium text-gray-800 dark:text-white">{title}</h3>
             <p className="text-sm text-center text-gray-500 mt-2 dark:text-gray-300">{description}</p>
-          </motion.div>
+          </div>
         ))}
       </div>
     </div>

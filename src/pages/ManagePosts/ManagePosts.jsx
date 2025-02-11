@@ -6,7 +6,7 @@ import { useQuery } from '@tanstack/react-query';
 import { useEffect, useState } from "react";
 import { format } from "date-fns";
 import { toast } from "react-toastify";
-import { motion } from "motion/react";
+
 import { fadeIn } from "../variant"
 
 import { HiOutlineExclamationCircle } from 'react-icons/hi'
@@ -77,15 +77,15 @@ export default function ManagePosts() {
 
   return (
     <div className="overflow-x-auto min-h-[calc(100vh-90px)] md:px-20 px-5 py-10 bg-gray-200 dark:bg-sky-950">
-      <motion.h2
-        variants={fadeIn("up", 0.2)}
-        initial="hidden"
-        whileInView={"show"}
-        viewport={{ once: true, amount: 0.7 }}
+      <h2
+        
+        
+        
+        
         className="text-3xl font-semibold text-center mb-8 dark:text-white"
       >
         My Volunteer Need Posts
-      </motion.h2>
+      </h2>
       {posts?.length ? (
         <div className="flex justify-center rounded bg-gray-100 dark:bg-gray-900">
           <div className="overflow-x-auto w-full max-w-screen-xl p-0 md:p-3 lg:p-4">
@@ -137,15 +137,15 @@ export default function ManagePosts() {
         <p className="text-center dark:text-gray-300">You Haven't Made Any Posts Yet</p>
       )}
 
-      <motion.h2
-        variants={fadeIn("up", 0.2)}
-        initial="hidden"
-        whileInView={"show"}
-        viewport={{ once: true, amount: 0.7 }}
+      <h2
+        
+        
+        
+        
         className="text-3xl font-semibold text-center my-8 dark:text-white"
       >
         My Requests
-      </motion.h2>
+      </h2>
       {requests?.length ? (
         <div className="flex justify-center rounded bg-gray-100 dark:bg-gray-900">
           <div className="overflow-x-auto w-full max-w-screen-xl p-0 md:p-3 lg:p-4">

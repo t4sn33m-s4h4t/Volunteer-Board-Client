@@ -4,7 +4,7 @@ import CardComponent from '../../ShareComponents/CardComponent';
 import { Link } from 'react-router-dom';
 import useAxios from '../../../CustomHooks/useAxios';
 import Loading from '../../Loading';
-import { motion } from "motion/react";
+
 import { fadeIn } from '../../variant';
 
 const VolunteerNeedsNow = () => {
@@ -35,14 +35,14 @@ const VolunteerNeedsNow = () => {
     }
     return (
         <div className="w-full text-center mb-20">
-            <motion.h2
-                variants={fadeIn("up", 0.2)}
-                initial="hidden"
-                whileInView={"show"}
-                viewport={{ once: true, amount: 0.7 }}
+            <h2
+                
+                
+                
+                
                 className="text-3xl font-semibold text-center mb-8 dark:text-white">
                 Volunteer Needs Now
-            </motion.h2>
+            </h2>
             <div className="grid grid-cols-1 text-left gap-10 md:grid-cols-3 lg:grid-cols-4 mb-10">
                 {data?.map((post) => (
                     <CardComponent key={post._id} data={post} />

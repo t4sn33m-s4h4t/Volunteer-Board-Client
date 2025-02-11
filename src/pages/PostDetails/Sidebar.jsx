@@ -3,7 +3,7 @@ import { FaMapMarkerAlt, FaUsers } from 'react-icons/fa';
 import { BiCategoryAlt } from 'react-icons/bi';
 import VolunteerDetailsModal from './VolunteerDetailsModal';
 import { format } from "date-fns";
-import { motion } from "motion/react";
+
 import { fadeIn } from "../variant"
 import { useEffect, useState } from 'react';
 const Sidebar = ({ data, refetch }) => {
@@ -13,22 +13,22 @@ const Sidebar = ({ data, refetch }) => {
     }, [data])
     return (
         <div>
-            <motion.div
+            <div
                 variants={fadeIn("left", 0.2)}
-                initial="hidden"
-                whileInView={"show"}
-                viewport={{ once: true, amount: 0.7 }}
+                
+                
+                
                 className="mx-auto p-8 text-center w-full h-fit bg-white dark:bg-cyan-900 rounded-lg shadow-lg">
                 <h3 className="text-lg dark:text-white font-medium text-gray-900 mb-2">Application ends:</h3>
                 <p className="text-base text-gray-700 mb-4 dark:text-gray-300 dark:font-semibold"> {format(data.deadline, "dd MMM, yyyy")}</p>
 
                 <VolunteerDetailsModal refetch={refetch} data={data} />
-            </motion.div>
-            <motion.div
+            </div>
+            <div
                 variants={fadeIn("right", 0.2)}
-                initial="hidden"
-                whileInView={"show"}
-                viewport={{ once: true, amount: 0.7 }}
+                
+                
+                
                 className="mx-auto  p-8 mt-10 w-full h-fit bg-white dark:bg-cyan-900 rounded-lg shadow-lg">
                 <div className="flex  items-center justify-center">
                     <h3 className="text-lg dark:text-white font-medium text-gray-900">Details</h3>
@@ -49,13 +49,13 @@ const Sidebar = ({ data, refetch }) => {
                         <span className='font-bold mr-2'>Volunteers Needed:</span> <span>{data.volunteersNeeded}</span>
                     </div>
                 </div>
-            </motion.div>
+            </div>
 
-            <motion.div
-                variants={fadeIn("up", 0.2)}
-                initial="hidden"
-                whileInView={"show"}
-                viewport={{ once: true, amount: 0.7 }}
+            <div
+                
+                
+                
+                
                 className="mx-auto p-8 mt-10 w-full h-fit bg-white dark:bg-cyan-900 rounded-lg shadow-lg">
                 <div className="flex items-center justify-between">
                     <Avatar size="lg" img={img} onError={() => { setImg('') }} className="cursor-pointer" />
@@ -75,7 +75,7 @@ const Sidebar = ({ data, refetch }) => {
                         <span className="dark:text-gray-300 dark:font-semibold">{data.organizerEmail}</span>
                     </li>
                 </ul>
-            </motion.div>
+            </div>
 
         </div>
     );

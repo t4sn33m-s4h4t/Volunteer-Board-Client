@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from "motion/react";
+
 import { fadeIn } from "../../variant";
 
 const reviewsData = [
@@ -13,17 +13,17 @@ const reviewsData = [
 
 const Reviews = () => {
   return (
-    <div className="bg-gray-200 dark:bg-sky-950 py-10 mt-28 flex items-center justify-center">
-      <div className="w-full mx-auto p-8 bg-white dark:bg-gray-800 rounded-lg shadow-lg text-center">
-        <motion.h2
+    <div className="bg-gray-200 dark:bg-sky-950 mb-10 mx-auto pt-10 pb-20 flex items-center justify-center">
+      <div className="w-full mx-auto p-8 pb-20 bg-white dark:bg-gray-800 rounded-lg shadow-lg text-center">
+        <h2
           variants={fadeIn("right", 0.2)}
-          initial="hidden"
-          whileInView={"show"}
-          viewport={{ once: true, amount: 0.7 }}
+          
+          
+          
           className="text-3xl font-semibold text-center mb-8 dark:text-white"
         >
           Top Reviews
-        </motion.h2>
+        </h2>
         <div className="grid md:grid-cols-3 grid-cols-1 gap-3 mt-14">
           {reviewsData.map((review, index) => (
             <div key={index} className="flex rounded-md dark:text-white shadow-xl border dark:border-0 dark:bg-cyan-800 bg-white flex-col gap-4 p-4">
