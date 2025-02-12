@@ -21,7 +21,7 @@ export default function Banner({ ban, title, description }) {
                         {title}
                     </h1>
                     <p
-                        variants={fadeIn("right", 0.2)}
+                        
                         
                         
                         

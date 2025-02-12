@@ -59,7 +59,7 @@ export default function FAQs() {
   return (
     <div className="bg-white mb-10 mx-auto py-10 px-10 rounded-lg shadow-lg dark:bg-gray-900">
       <h2
-        variants={fadeIn("right", 0.2)}
+        
         
         
         

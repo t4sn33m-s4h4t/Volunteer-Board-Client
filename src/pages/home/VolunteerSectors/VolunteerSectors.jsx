@@ -69,7 +69,7 @@ const VolunteerSectors = () => {
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {categories.map(({ id, title, description, icon }) => (
           <div
-          variants={fadeIn("right", 0.2)}
+          
           
           
           viewport={{ once: true, amount: 0.4 }}

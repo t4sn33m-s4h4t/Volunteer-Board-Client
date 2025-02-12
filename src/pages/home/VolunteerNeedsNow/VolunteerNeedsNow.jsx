@@ -43,7 +43,7 @@ const VolunteerNeedsNow = () => {
                 className="text-3xl font-semibold text-center mb-8 dark:text-white">
                 Volunteer Needs Now
             </h2>
-            <div className="grid grid-cols-1 text-left gap-10 md:grid-cols-3 lg:grid-cols-4 mb-10">
+            <div className="grid grid-cols-1 text-left lg:gap-5 gap-3 md:grid-cols-3 lg:grid-cols-4 mb-10">
                 {data?.map((post) => (
                     <CardComponent key={post._id} data={post} />
                 ))}

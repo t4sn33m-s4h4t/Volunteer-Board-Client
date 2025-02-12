@@ -25,7 +25,7 @@ const Sidebar = ({ data, refetch }) => {
                 <VolunteerDetailsModal refetch={refetch} data={data} />
             </div>
             <div
-                variants={fadeIn("right", 0.2)}
+                
                 
                 
                 

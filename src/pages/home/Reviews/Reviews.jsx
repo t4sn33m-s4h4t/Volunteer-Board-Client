@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { fadeIn } from "../../variant";
+
 
 const reviewsData = [
   { name: "Jess Hopkins", initial: "J", bgColor: "bg-red-500", date: "Jun 21, 2021", review: "Absolutely love it! The attention to detail is incredible, and the responsiveness makes it a joy to use." },
@@ -13,10 +13,10 @@ const reviewsData = [
 
 const Reviews = () => {
   return (
-    <div className="bg-gray-200 dark:bg-sky-950 mb-10 mx-auto pt-10 pb-20 flex items-center justify-center">
+    <div className="bg-gray-200 dark:bg-sky-950 mx-auto pt-10 pb-20 flex items-center justify-center">
       <div className="w-full mx-auto p-8 pb-20 bg-white dark:bg-gray-800 rounded-lg shadow-lg text-center">
         <h2
-          variants={fadeIn("right", 0.2)}
+          
           
           
           

@@ -160,7 +160,7 @@ const AllVolunteerNeedPosts = () => {
                         </div>)
                     :
                     <div
-                        className={` ${CardView ? "grid" : "block"} grid-cols-1 text-left gap-10 md:grid-cols-3 lg:grid-cols-4 mb-10`}>
+                        className={` ${CardView ? "grid" : "block"} grid-cols-1 text-left lg:gap-5 gap-3 md:grid-cols-3 lg:grid-cols-4 mb-10`}>
                         {
                             CardView ? (sortedData?.map((post) => (
                                 <CardComponent key={post.id} data={post} />
