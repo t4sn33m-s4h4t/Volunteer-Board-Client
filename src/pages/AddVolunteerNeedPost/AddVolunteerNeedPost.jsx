@@ -7,7 +7,7 @@ import { useAuth } from "../../CustomHooks/useAuth";
 import { useMutation } from '@tanstack/react-query'
 import useAxiosSecure from "../../CustomHooks/useAxiosSecure";
 
-import { fadeIn } from "../variant"
+
 import { useNavigate } from "react-router-dom";
 const AddVolunteerNeedPost = () => {
   const axiosSecure = useAxiosSecure();
@@ -104,10 +104,6 @@ const AddVolunteerNeedPost = () => {
           Add Volunteer Need Post
         </h2>
         <form
-                variants={fadeIn("down", 0.4)}
-                
-                
-                viewport={{ once: true, amount: 0.2 }}
         onSubmit={handleSubmit} className="space-y-6">
           <div>
             <Label htmlFor="thumbnail" value="Thumbnail (URL)" className="mb-2" />

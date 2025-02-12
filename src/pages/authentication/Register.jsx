@@ -9,7 +9,7 @@ import { RiProfileLine } from "react-icons/ri";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { CiImageOn } from "react-icons/ci";
 
-import { fadeIn } from "../variant"
+
 
 export default function Register() {
     const [hidePass, setHidePass] = useState(true)
@@ -88,9 +88,6 @@ export default function Register() {
                     Register Now
                 </h2>
                 <form
-                    variants={fadeIn("right", 0.3)}
-                    
-                    
                     
                     onSubmit={handleSubmit}>
                     <div className="mt-4">

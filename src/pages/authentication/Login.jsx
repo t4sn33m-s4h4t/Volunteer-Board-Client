@@ -8,7 +8,7 @@ import { BiLock, BiSolidHide } from "react-icons/bi";
 import { IoEye } from "react-icons/io5";
 import { MdOutlineMailOutline } from "react-icons/md";
 
-import { fadeIn } from "../variant"
+
 
 export default function LoginComponent() {
 
@@ -83,9 +83,6 @@ export default function LoginComponent() {
           Login
         </h2>
         <form
-          variants={fadeIn("right", 0.3)}
-          
-          
           
           onSubmit={handleSubmit}>
           <div className="mt-4">

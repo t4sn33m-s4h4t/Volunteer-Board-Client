@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { format } from "date-fns";
 import { toast } from "react-toastify";
 
-import { fadeIn } from "../variant"
+
 
 import { HiOutlineExclamationCircle } from 'react-icons/hi'
 

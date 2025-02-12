@@ -1,6 +1,6 @@
 import { Accordion, AccordionContent, AccordionPanel, AccordionTitle } from "flowbite-react";
 
-import { fadeIn } from "../../variant"
+
 
 const faqData = [
   {
@@ -67,10 +67,6 @@ export default function FAQs() {
         FAQs
       </h2>
       <div
-        variants={fadeIn("left", 0.2)}
-        
-        
-        
 >
         <Accordion collapseAll>
         {faqData.map((faq, index) => (

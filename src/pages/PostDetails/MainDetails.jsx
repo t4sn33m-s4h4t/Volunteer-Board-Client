@@ -1,10 +1,9 @@
 import { Card } from "flowbite-react";
 
-import { fadeIn } from "../variant"
+
 const MainDetails = ({ data }) => {
     return (
         <div
-            variants={fadeIn("right", 0.1)}
             
             
             

@@ -3,9 +3,7 @@ import { useQuery } from '@tanstack/react-query';
 import CardComponent from '../../ShareComponents/CardComponent';
 import { Link } from 'react-router-dom';
 import useAxios from '../../../CustomHooks/useAxios';
-import Loading from '../../Loading';
-
-import { fadeIn } from '../../variant';
+import Loading from '../../Loading'; 
 
 const VolunteerNeedsNow = () => {
     const OwnAxios = useAxios();

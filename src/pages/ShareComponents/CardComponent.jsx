@@ -2,13 +2,10 @@
 import { format } from "date-fns";
 import { Badge, Card } from "flowbite-react";
 import { Link } from "react-router-dom";
-
-import { fadeIn } from "../variant"
 export default function CardComponent({ data }) {
   
   return (
     <div
-      variants={fadeIn("left", 0.2)}
       
       
       

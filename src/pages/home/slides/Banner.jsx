@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 
-
-import { fadeIn } from '../../variant';
+ 
 export default function Banner({ ban, title, description }) {
     return (
         <div
@@ -13,10 +12,6 @@ export default function Banner({ ban, title, description }) {
             <div className="hero-content h-full text-neutral-content text-center ">
                 <div className="max-w-lg h-full mx-auto pt-24 px-5">
                     <h1
-                        variants={fadeIn("left", 0.2)}
-                        
-                        
-                        
                         className="mb-5 lg:text-4xl md:text-4xl text-3xl font-bold text-white">
                         {title}
                     </h1>

@@ -1,7 +1,7 @@
 import React from "react";
 import { FaHandsHelping, FaRegEdit, FaTrashAlt, FaPlusSquare, FaUsers, FaTasks, FaUserPlus, FaHeart } from "react-icons/fa";
 
-import { fadeIn } from "../../variant"
+
 const VolunteerSectors = () => {
   const categories = [
     {
@@ -71,8 +71,6 @@ const VolunteerSectors = () => {
           <div
           
           
-          
-          viewport={{ once: true, amount: 0.4 }}
             key={id}
             className="flex flex-col items-center p-6 bg-white dark:bg-cyan-800 rounded-lg shadow hover:shadow-lg transition"
           >

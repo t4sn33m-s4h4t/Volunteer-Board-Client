@@ -8,7 +8,7 @@ import useAxios from '../../CustomHooks/useAxios';
 import ListComponent from '../ShareComponents/ListComponent';
 import { Label, Pagination, Select } from 'flowbite-react';
 
-import { fadeIn } from "../variant"
+
 
 const AllVolunteerNeedPosts = () => {
     const [sortOption, setSortOption] = useState("date-ascending");
@@ -91,9 +91,6 @@ const AllVolunteerNeedPosts = () => {
             </h2>
 
             <div
-                variants={fadeIn("right", 0.3)}
-                
-                
                 
                 className="mb-4 relative flex items-center justify-center w-full md:w-3/5 mx-auto border border-gray-300 rounded-lg overflow-hidden shadow-lg">
                 <input
@@ -173,10 +170,6 @@ const AllVolunteerNeedPosts = () => {
             }
             {
                 !searchTerm.length && <div
-                    variants={fadeIn("up", 0.3)}
-                    
-                    
-                    
                     className="flex overflow-x-auto ">
 
                     <Pagination className='justify-center mx-auto' currentPage={currentPage} totalPages={totalPages} onPageChange={onPageChange} showIcons />

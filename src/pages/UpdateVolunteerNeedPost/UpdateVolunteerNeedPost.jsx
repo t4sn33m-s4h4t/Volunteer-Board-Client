@@ -9,7 +9,6 @@ import useAxiosSecure from "../../CustomHooks/useAxiosSecure";
 import { useParams } from "react-router-dom";
 import Loading from "../Loading";
 
-import { fadeIn } from "../variant"
 
 const UpdateVolunteerNeedPost = () => {
   const axiosSecure = useAxiosSecure();
@@ -113,10 +112,7 @@ const UpdateVolunteerNeedPost = () => {
           Update Volunteer Need Post
         </h2>
         <form
-          variants={fadeIn("down", 0.4)}
           
-          
-          viewport={{ once: true, amount: 0.2 }}
           onSubmit={handleSubmit} className="space-y-6">
           <div>
             <Label htmlFor="thumbnail" value="Thumbnail (URL)" className="mb-2" />

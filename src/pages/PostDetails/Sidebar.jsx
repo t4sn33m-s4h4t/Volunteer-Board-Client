@@ -3,8 +3,6 @@ import { FaMapMarkerAlt, FaUsers } from 'react-icons/fa';
 import { BiCategoryAlt } from 'react-icons/bi';
 import VolunteerDetailsModal from './VolunteerDetailsModal';
 import { format } from "date-fns";
-
-import { fadeIn } from "../variant"
 import { useEffect, useState } from 'react';
 const Sidebar = ({ data, refetch }) => {
     const [img, setImg] = useState("")
@@ -14,9 +12,6 @@ const Sidebar = ({ data, refetch }) => {
     return (
         <div>
             <div
-                variants={fadeIn("left", 0.2)}
-                
-                
                 
                 className="mx-auto p-8 text-center w-full h-fit bg-white dark:bg-cyan-900 rounded-lg shadow-lg">
                 <h3 className="text-lg dark:text-white font-medium text-gray-900 mb-2">Application ends:</h3>

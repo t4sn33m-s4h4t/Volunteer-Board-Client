@@ -2,7 +2,7 @@ import { format } from 'date-fns'
 import { Table, TableBody, TableCell, TableHead, TableHeadCell, TableRow } from 'flowbite-react'
 import { Link } from 'react-router-dom'
 
-import { fadeIn } from "../variant"
+
 
 const ListComponent = ({ data }) => {
     return (
