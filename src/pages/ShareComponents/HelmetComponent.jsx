@@ -24,6 +24,12 @@ const HelmetComponent = () => {
     case "/all-posts":
       pageTitle = "All Volunteer Need Posts";
       break;
+    case "/contact-us":
+      pageTitle = "Contact";
+      break;
+    case "/about-us":
+      pageTitle = "About Us";
+      break;
     case "/manage-posts":
       pageTitle = "Manage Posts";
       break;
